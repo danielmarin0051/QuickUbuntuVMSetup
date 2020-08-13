@@ -4,6 +4,7 @@
   - [Update package manager](#update-package-manager)
   - [Setup emacs](#setup-emacs)
   - [Setup some aliases for the command line](#setup-some-aliases-for-the-command-line)
+  - [Add useful git aliases](#add-useful-git-aliases)
   - [Prettify bash command prompt](#prettify-bash-command-prompt)
   - [Install Conda and Python 3](#install-conda-and-python-3)
   - [Setup Chrome Remote Desktop](#setup-chrome-remote-desktop)
@@ -37,6 +38,13 @@ alias l='ls -F'
 
 `-F` is for adding things like a slash ("/") in front or directories, etc. `-h` to print sizes in a readable format, `a` to also print files starting with `.`, and `-l` to list in long format.
 
+## Add useful git aliases
+
+```bash
+git config --global alias.logline "log --all --decorate --oneline --graph"
+git config --global alias.cdiff "diff --color-words"
+```
+
 ## Prettify bash command prompt
 
 // TODO
@@ -50,7 +58,7 @@ conda create -n dev anaconda
 conda install -c anaconda cmake
 ```
 
-You add this to your `.bashrc` to always be on the `dev` virtual environment on startup by default.
+You can add this to your `.bashrc` to always be on the `dev` virtual environment on startup by default.
 
 ```bash
 conda activate dev
@@ -64,7 +72,7 @@ source .bashrc
 
 ## Setup Chrome Remote Desktop
 
-[Install and setup Chrome Remote Desktop](https://cloud.google.com/solutions/chrome-desktop-remote-on-compute-engine) along with Google Chrome in your remote instance to control your VM through its GUI desktop.
+[Install and setup Chrome Remote Desktop](https://cloud.google.com/solutions/chrome-desktop-remote-on-compute-engine) along with Google Chrome in your remote instance to control your VM through a GUI desktop environment.
 
 ## Set up your SSH keys to connect to your instance
 
@@ -99,4 +107,4 @@ ssh -i ~/.ssh/[KEY_FILENAME] [USERNAME]@[EXTERNAL_IP_ADDRESS_OF_YOUR_INSTANCE]
 
 Before doing this last step, you might want to assign your VM instance a permanent external IP address, so that the host can be remembered by your local machine.
 
-Note: I highly recommend you use VS code to connect to your remote VM instance. If you don't have it aready, install the `Remote - SSH` VS code extension. Then by typing the last `ssh` command open your remote through VS code.
+Note: I highly recommend you use VS code to connect to your remote VM instance. If you don't have it aready, install the `Remote - SSH` VS code extension. Then by typing the last `ssh` command above open your remote through VS code.
